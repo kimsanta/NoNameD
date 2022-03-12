@@ -13,7 +13,7 @@ CPathManager::~CPathManager()
 
 void CPathManager::init()
 {
-	GetCurrentDirectory(255, m_strContentPath);
+	GetCurrentDirectory(255, m_strContentPath);	//배열의 이름은 주소
 
 	// 상위 폴더로
 	// + bin\\content\\
@@ -29,7 +29,7 @@ void CPathManager::init()
 		}
 	}
 
-	wcscat_s(m_strContentPath, 255, L"\\Release\\content\\");	// wchar_t 문자열 뒤에 문자열 붙이기
+	wcscat_s(m_strContentPath, 255, L"\\bin\\content\\");	// wchar_t 문자열 뒤에 문자열 붙이기
 
 	Logger::info(m_strContentPath);
 }
